@@ -81,3 +81,34 @@ function translatePigLatin(str) {
   return str;
 }
 translatePigLatin("consonant");
+
+//Intermediate DSA 7//
+function myReplace(str, before, after) {
+  let strArr = str.split(' ');
+
+  for (let i = 0; i < strArr.length; i++) {
+    if (strArr[i] === before) {
+      if (strArr[i][0] === strArr[i][0].toUpperCase()) {
+        strArr[i] = after[0].toUpperCase() + after.slice(1);
+      } else {
+        strArr[i] = after[0].toLowerCase() + after.slice(1);
+      }
+    }
+  }
+  return strArr.join(' ');
+}
+myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");
+
+//Intermediate DSA 8//
+function pairElement(str) {
+  let DNA = [];
+
+  for(let i=0; i<str.length; i++){
+    if(str[i] === 'A') DNA.push([str[i], 'T'])
+    if(str[i] === 'T') DNA.push([str[i], 'A'])
+    if(str[i] === 'G') DNA.push([str[i], 'C'])
+    if(str[i] === 'C') DNA.push([str[i], 'G'])
+  }
+  return DNA;
+}
+pairElement("GCG");
